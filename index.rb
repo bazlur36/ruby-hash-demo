@@ -1,32 +1,30 @@
-class Person
+class Prescription
 
-  def set_age(age)
+  def initialize(age)
     @age = age
   end
 
-  def life_stage
-    create_life_stage
+  def prescription
+    create_prescription
   end
 
   private
-  def create_life_stage
+  def create_prescription
     case @age
     when 0..1
-      type = "INFANT"
+      shifts = ['INFANT', 'morning', 'noon', 'evening', 'late night']
     when 2..12
-      type = "CHILD"
+      shifts = ['CHILD', 'morning', 'noon', 'evening']
     when 13..19
-      type = "YOUNG"
+      shifts = ['YOUNG', 'morning', 'evening']
     when 20..50
-      type = "ADULT"
+      shifts = ['ADULT', 'morning', 'noon', 'evening']
     else
-      type = "OLD"
+      shifts = ['OLD', 'morning', 'noon', 'evening']
     end
-    type
+    shifts
   end
 end
 
-p = Person.new
-p.set_age(0)
-
-puts p.life_stage
+p = Prescription.new(0)
+puts p.prescription
