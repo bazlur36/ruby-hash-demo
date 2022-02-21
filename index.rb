@@ -12,15 +12,15 @@ class Prescription
   def create_prescription
     case @age
     when 0..1
-      shifts = ['INFANT', 'morning', 'noon', 'evening', 'late night']
+      shifts = ['INFANT']
     when 2..12
-      shifts = ['CHILD', 'morning', 'noon', 'evening']
+      shifts = ['CHILD']
     when 13..19
-      shifts = ['YOUNG', 'morning', 'evening']
+      shifts = ['YOUNG']
     when 20..50
-      shifts = ['ADULT', 'morning', 'noon', 'evening']
+      shifts = ['ADULT']
     else
-      shifts = ['OLD', 'morning', 'noon', 'evening']
+      shifts = ['OLD']
     end
     shifts
   end
