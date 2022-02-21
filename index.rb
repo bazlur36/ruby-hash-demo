@@ -1,15 +1,15 @@
-class Person
+class Prescription
 
-  def set_age(age)
+  def initialize(age)
     @age = age
   end
 
-  def life_stage
-    create_life_stage
+  def prescription
+    create_prescription
   end
 
   private
-  def create_life_stage
+  def create_prescription
     case @age
     when 0..1
       type = "INFANT"
@@ -26,7 +26,5 @@ class Person
   end
 end
 
-p = Person.new
-p.set_age(0)
-
-puts p.life_stage
+p = Prescription.new(30)
+puts p.prescription
