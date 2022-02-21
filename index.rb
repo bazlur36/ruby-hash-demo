@@ -11,6 +11,6 @@ class Person
 end
 
 p = Person.new
-p.set_age(0)
+p.set_age(10)
 
 puts p.life_stage
