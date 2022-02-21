@@ -5,12 +5,11 @@ class Person
   end
 
   def life_stage
-    @age
+    @age * 2
   end
 
 end
 
 p = Person.new
-p.set_age(10)
-
+p.set_age(1)
 puts p.life_stage
