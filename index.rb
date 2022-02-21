@@ -12,19 +12,19 @@ class Prescription
   def create_prescription
     case @age
     when 0..1
-      shifts = ['INFANT', 'morning', 'noon', 'evening', 'late night']
+      shifts = {ageGroup: 'INFANT', :type => 'Syrup', :morning => '1 Spoon', :noon => '0.5 Spoon', :evening => '1 Spoon', :lateNight => '2 Spoons', }
     when 2..12
-      shifts = ['CHILD', 'morning', 'noon', 'evening']
+      shifts = {ageGroup: 'CHILD', :type => 'Tablet', :morning => '1 tablet', :noon => '1 tablet', :evening => '1 tablet'}
     when 13..19
-      shifts = ['YOUNG', 'morning', 'evening']
+      shifts = {ageGroup: 'YOUNG', :type => 'Tablet', :morning => '1 tablet', :evening => '1 tablet'}
     when 20..50
-      shifts = ['ADULT', 'morning', 'noon', 'evening']
+      shifts = {ageGroup: 'ADULT', :type => 'Tablet', :morning => '1 tablet', :evening => '1 tablet' }
     else
-      shifts = ['OLD', 'morning', 'noon', 'evening']
+      shifts = {ageGroup: 'OLD', :type => 'Syrup', :morning => '1 Spoon', :evening => '1 Speen' }
     end
     shifts
   end
 end
 
-p = Prescription.new(0)
+p = Prescription.new(60)
 puts p.prescription
