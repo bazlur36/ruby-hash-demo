@@ -49,6 +49,13 @@ class Prescription
                   :evening => '1',
                   :lateNight => '2'
               },
+              1,
+              "one",
+              {
+                  football: {
+                      color: "black and white"
+                  }
+              },
               {
                   :type => 'Tablet',
                   :name => 'Cevit',
@@ -110,5 +117,6 @@ class Prescription
   end
 end
 
-p = Prescription.new(60)
-puts p.prescription
+p = Prescription.new(16)
+item = p.prescription
+puts item[:medicines][3][:football][:color]
